@@ -1,0 +1,121 @@
+<div id="container-questionnaire">
+    <h1>Demographic Questionaire</h1>
+
+    <hr>
+
+    <p>Before we begin the experiment, we ask that you answer the following questions.</p>
+
+    <div class="instructions well">
+
+        <form id="postquiz" action="debrief" method="post">
+
+            <!-- beginning of a question -->
+            <div class="row question">
+                <div class="col-md-8">
+                    Age: <input id="age" type="text" name="age">
+                </div>
+            </div>
+            <!-- end of a question -->
+
+            <!-- beginning of a question -->
+            <div class="row question">
+                <div class="col-md-8">
+                    Gender:
+		            <select id="gender" name="gender">
+		                <option value="Unanswered" SELECTED>Prefer Not To Say</option>
+		                <option value="Female">Female</option>
+		                <option value="Male">Male</option>
+                	</select>
+                </div>
+            </div>
+            <!-- end of a question -->
+
+            <!-- beginning of a question -->
+            <div class="row question">
+                <div class="col-md-8">
+                    First Language: <input id="firstlang" type="text" name="firstlang">
+                </div>
+            </div>
+            <!-- end of a question -->
+
+            <!-- beginning of a question -->
+            <div class="row question">
+                <div class="col-md-8">
+                    Highest Level of Education:
+		            <select id="education" name="education">
+		            	<option value="Unanswered" SELECTED> Prefer Not To Say</option>
+		                <option value="NoSchool">No School</option>
+		                <option value="SomeHS">Some High School</option>
+		                <option value="GradHS">Graduated High School</option>
+		                <option value="TechSchool">Technical School</option>
+		                <option value="SomeColl">Some College</option>
+		                <option value="AssociateDegree">Associate Degree</option>
+		                <option value="BachelorDegree">Bachelors Degree</option>
+		                <option value="MastersDegree">Masters Degree</option>
+		                <option value="DoctoralDegree">Doctoral Degree</option>
+		            </select>
+                </div>
+            </div>
+            <!-- end of a question -->
+
+            <!-- beginning of a question -->
+            <div class="row question">
+                <div class="col-md-8">
+                    Handedness:
+		            <select id="handedness" name="handedness">
+		                <option value="Unselected" SELECTED>Choices:</option>
+		                <option value="Left">Left</option>
+		                <option value="Right">Right</option>
+		                <option value="Ambidexterous">Ambidextrous</option>
+                	</select>
+                </div>
+            </div>
+            <!-- end of a question -->
+
+            <!-- beginning of a question -->
+            <div class="row question">
+                <div class="col-md-8">
+                    Zip Code: <input id="zipcode" type="text" name="zipcode">
+                </div>
+            </div>
+            <!-- end of a question -->
+            
+            <!-- beginning of a question -->
+            <div class="row question">
+                <div class="col-md-8">
+                <p>This experiment requries sound. Please type what you hear in the box.</p>
+                <div id="sound_check_wav" onclick="MakeMusic()">Play Sound</div>
+                <input id="sound_check" type="text" name="sound_check">
+                </div>
+            </div>
+            <!-- end of a question -->
+                   
+        </form>
+    </div>
+	
+	<h1> Instructions </h1>
+
+	 <p> In this experiment, you will be presented with an image and asked to click on certain objects in the image. Instructions will be presented using audio.
+        </p>
+
+        <p> We ask that you give your full attention to the task while participating in this experiment. If you understand these instructions and wish to continue, press the button below to begin.
+        </p>
+
+    <hr>
+
+    <div class="instructionsnav">
+        <div class="row">
+            <div class="col-xs-2">
+            </div>
+            <div class="col-xs-7">
+            </div>
+            <div class="col-xs-3">
+                <button type="button" id="next" value="next" class="btn btn-primary btn-lg continue">
+                    Continue <span class="glyphicon glyphicon-arrow-right"></span>
+                </button>
+            </div>
+        </div>
+    </div>
+
+
+</div>
