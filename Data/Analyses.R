@@ -90,8 +90,18 @@ g3 = ggplot(d3[d3$ItemNo>1 & (d3$ACC=='yes' | d3$ACC=='TRUE'),], aes(GroupingFac
 	scale_colour_brewer(palette="Set1")
 
 library(lme4)
+#glmer is a generalized linear model
+#Grouped is a categorical variable (yes or no)
+#Predict Grouped using GroupingFactor (that is a fixed effect that I manipulated)
+#The minus one is dummy coding that removes all levels of grouping factor from the intercept
+#   Otherwise the intercept would be the first level of the grouping factor variable
+#The (1|ID)+(1|ItemNo) are random effects for subject and item
+#The second argument is the data used
+#The family argument is for non-linear regression. This data is categorical and therefore logistic regression with a binomial distribution
+#   should be used.
 fit1a = glmer(Grouped~-1+GroupingFactor+(1|ID)+(1|ItemNo),d1a[d1a$ItemNo>1,],family=binomial)
 fit1b = glmer(Grouped~-1+GroupingFactor+(1|ID)+(1|ItemNo),d1b[d1b$ItemNo>1,],family=binomial)
 fit1c = glmer(Grouped~-1+GroupingFactor+(1|ID)+(1|ItemNo),d1c[d1c$ItemNo>1,],family=binomial)
 fit2 = glmer(Grouped~-1+GroupingFactor+(1|ID)+(1|ItemNo),d2[d2$ItemNo>1,],family=binomial)
 fit3 = glmer(Grouped~-1+GroupingFactor+(1|ID)+(1|ItemNo),d3[d3$ItemNo>1,],family=binomial)
+summary(fit1a) #Will give me the regression output i.e. coefficients, t-values, significance, R**2 etc.
